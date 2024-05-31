@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Inventory</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to bottom right, #001f3f, #ff4136, #ffb6c1);
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            width: 400px;
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .input-label {
+            font-size: 14px;
+            margin-bottom: 5px;
+            color: #34495e;
+        }
+
+        .input-field {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #000; /* Simple black border */
+            background-color: #fff; /* White background */
+            margin-bottom: 15px;
+            box-sizing: border-box;
+            border-radius: 6px; /* Curved edges */
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 10px;
+            background-color: #c0392b;
+            color: #ffffff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .submit-btn:hover {
+            background-color: #e74c3c;
+        }
+
+        .message {
+            margin-top: 10px;
+            text-align: center;
+            color: #4caf50;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h2>Add Inventory</h2>
+        <form id="save.php" method="post">
+            <div>
+                <label for="productId" class="input-label">Product ID:</label>
+                <input type="text" id="productId" name="productId" placeholder="Product ID" class="input-field">
+            </div>
+            <div>
+                <label for="productName" class="input-label">Product Name:</label>
+                <input type="text" id="productName" name="productName" placeholder="Product Name" class="input-field">
+            </div>
+            <div>
+                <label for="quantity" class="input-label">Quantity:</label>
+                <input type="number" id="quantity" name="quantity" placeholder="Quantity" class="input-field">
+            </div>
+            <div>
+                <label for="expiryDate" class="input-label">Expiry Date:</label>
+                <input type="text" id="expiryDate" name="expiryDate" placeholder="Expiry Date" class="input-field">
+            </div>
+            <button type="submit" class="submit-btn">Add Inventory</button>
+            <div id="message" class="message">
+                <?php if (isset($message)) echo $message; ?>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>
